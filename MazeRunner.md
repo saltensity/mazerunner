@@ -24,7 +24,7 @@ The implementation here uses a Stack to store the coordinates to be explored at 
 ## Part 1: LinkedList
 
 1. Implement the `LinkedList` class in `datastruct.py` to enable the maze to be solved.
-2. Use the unit tests, as well as your own tests, to check your `LinkedList` implementation.
+2. Use your own tests, to check your `LinkedList` implementation.
 
 Remember to remove the `raise NotImplementedError` lines. While the `pass` keyword allows the program to continue silently without any code to run, the `NotImplementedError` halts the program. Very useful to remind yourself of parts of the code that are not yet ready and still need work!
 
@@ -63,7 +63,7 @@ A Circular Queue is a **fixed size** queue where the next item that comes after 
 The fixed size of a Circular Queue makes it much easier to implement `enqueue()` and `dequeue()` methods, as there is no need to implement insert/append/delete methods. Instead, the `head` and `tail` attributes keep track of the indexes where exising items will be dequeued, and where new items will be enqueued.
 
 1. Implement the `CircularQueue` class in `cq.py` to enable the maze to be solved.
-2. Use the unit tests to check your `Circular Queue` implementation.
+2. Use your own tests, to check your `Circular Queue` implementation.
 3. Edit `main.py` to use a `CircularQueue` class instead of a `Queue`.  
 If it works correctly, you should see the program successfully find its way out of the maze (using breadth-first search)!
 
