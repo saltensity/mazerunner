@@ -24,10 +24,10 @@ class Stack(LinkedList):
     - pop() -> item
     """
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return 'Stack()'
 
-    def push(self, item):
+    def push(self, item) -> None:
         """
         Pushes item onto the top of the stack.
 
@@ -41,7 +41,7 @@ class Stack(LinkedList):
         # Replace the line below with your code
         raise NotImplementedError
 
-    def pop(self):
+    def pop(self) -> "item":
         """
         Pops item off the top of the stack, and returns it.
 
@@ -72,10 +72,10 @@ class Queue(LinkedList):
     - dequeue() -> item
     """
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return 'Queue()'
 
-    def enqueue(self, item):
+    def enqueue(self, item) -> None:
         """
         Enqueues item into the end of the queue.
 
@@ -89,7 +89,7 @@ class Queue(LinkedList):
         # Replace the line below with your code
         raise NotImplementedError
 
-    def dequeue(self):
+    def dequeue(self) -> "item":
         """
         Dequeues item from the front of the queue, and returns it.
 

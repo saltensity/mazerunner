@@ -25,7 +25,7 @@ class Node:
         # Replace the line below with your code
         raise NotImplementedError
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'Node({self.get()})'
 
     def get(self):
@@ -64,7 +64,7 @@ class LinkedList:
     def __init__(self):
         self._head = None
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return 'LinkedList()'
 
     def length(self) -> int:
@@ -79,7 +79,7 @@ class LinkedList:
         # Replace the line below with your code
         raise NotImplementedError
 
-    def get(self, n: int):
+    def get(self, n: int) -> "item":
         """Returns item at n-th node.
 
         Arguments
@@ -94,7 +94,7 @@ class LinkedList:
         # Replace the line below with your code
         raise NotImplementedError
 
-    def insert(self, n: int, item):
+    def insert(self, n: int, item) -> None:
         """Insert item into linkedlist at position n.
         insert at head -> n == 0
         append -> n == length
@@ -104,14 +104,14 @@ class LinkedList:
         - n: int
           sequence number of item to be inserted.
 
-        Returns: n
+        Returns: None
 
         Raises: IndexError if n > length
         """
         # Replace the line below with your code
         raise NotImplementedError
 
-    def append(self, item):
+    def append(self, item) -> None:
         """Append item at the end of linkedlist.
 
         Arguments
@@ -124,7 +124,7 @@ class LinkedList:
         # Replace the line below with your code
         raise NotImplementedError
 
-    def delete(self, n: int):
+    def delete(self, n: int) -> None:
         """Delete n-th item from linkedlist.
 
         Arguments
@@ -135,6 +135,21 @@ class LinkedList:
         Returns: None
 
         Raises: IndexError if n > length
+        """
+        # Replace the line below with your code
+        raise NotImplementedError
+       
+    def contains(self, item) -> bool:
+        """Checks whether an item is in the linkedlist and returns
+        a boolean value to indicate the status of the search
+
+        Arguments
+        ---------
+        - item
+          The item to be searched for.
+
+        Returns: True if item is found in the linkedlist,
+        otherwise False
         """
         # Replace the line below with your code
         raise NotImplementedError

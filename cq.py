@@ -18,10 +18,10 @@ class CircularQueue:
         # Delete the line below and write your code here
         raise NotImplementedError("__init__ not implemented")
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"CircularQueue({self.size})"
 
-    def enqueue(self, data):
+    def enqueue(self, data) -> None:
         """
         Add item at the end of the queue.
 
@@ -35,7 +35,7 @@ class CircularQueue:
         # Delete the line below and write your code here
         raise NotImplementedError("enqueue not implemented")
 
-    def dequeue(self):
+    def dequeue(self) -> "item":
         """
         Return the item at the head of the queue.
 
