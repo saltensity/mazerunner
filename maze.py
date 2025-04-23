@@ -32,12 +32,12 @@ class Maze:
     def __init__(self, filename: str) -> None:
         self.import_from(filename)
 
-        first_row_data = self.data[0]
+        first_row_data = self._data[0]
         index_of_start = first_row_data.index('0')
         start_coord_tuple = (0, index_of_start)
         self.start = start_coord_tuple
 
-        last_row_data = self.data[-1]
+        last_row_data = self._data[-1]
         index_of_end = last_row_data.index('0')
         y_size = len(self.maze())
         end_coord_tuple = (y_size - 1, index_of_end)
@@ -64,7 +64,7 @@ class Maze:
         self._data = maze
         self.filename = filename
 
-    def maze(self) -> list[str]:
+    def maze(self) -> "list[str]":
         """
         Get maze data.
 
@@ -131,7 +131,8 @@ class Maze:
                     print(char['wall'], end='')
                 elif here and (y, x) == here:
                     print(char['here'], end='')
-                elif options and (y, x) in options:
+                # elif options and (y, x) in options:
+                elif options and options.contains((y, x)):
                     print(char['option'], end='')
                 elif visited and (y, x) in visited:
                     print(char['visited'], end='')
