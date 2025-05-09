@@ -1,6 +1,5 @@
 ############################### 72 chars ###############################
 
-
 class Node:
     """
     Represents a node in a linkedlist.
@@ -23,7 +22,9 @@ class Node:
 
     def __init__(self, data):
         # Replace the line below with your code
-        raise NotImplementedError
+        self._data = data
+        self.next = None
+        
 
     def __repr__(self) -> str:
         return f'Node({self.get()})'
@@ -76,8 +77,14 @@ class LinkedList:
 
         Return: int
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        length = 0
+        currentNode = self._head
+        while currentNode is not None:
+          length += 1
+          currentNode = currentNode.next
+        
+        return length
+        
 
     def get(self, n: int) -> "item":
         """Returns item at n-th node.
@@ -91,8 +98,14 @@ class LinkedList:
 
         Raises: IndexError if n > length
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        if n > self.length():
+          raise IndexError
+  
+        currentNode = self._head
+        for i in range(n-1):
+          currentNode = currentNode.next
+        
+        return currentNode.get()
 
     def insert(self, n: int, item) -> None:
         """Insert item into linkedlist at position n.
@@ -109,7 +122,27 @@ class LinkedList:
         Raises: IndexError if n > length
         """
         # Replace the line below with your code
-        raise NotImplementedError
+        
+        currentNode = self._head
+        
+        node = Node(item)
+        if n == 1:
+          self._head = node
+          self._head.next = currentNode
+          return
+        
+        for i in range(n-1):
+          currentNode = currentNode.next
+          print(currentNode)
+          
+        if n == self.length():
+          currentNode.next = node
+        else:
+          next = currentNode.next
+          node.next = next
+          currentNode.next = node
+        
+        #raise NotImplementedError
 
     def append(self, item) -> None:
         """Append item at the end of linkedlist.
@@ -121,8 +154,19 @@ class LinkedList:
 
         Returns: None
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        if self.length() == 0:
+          self._head = Node(item)
+          return
+        
+        node = Node(item)
+        currentNode = self._head
+        
+        while currentNode.next != None:
+          currentNode = currentNode.next
+          
+        currentNode.next = node
+        
+        # raise NotImplementedError
 
     def delete(self, n: int) -> None:
         """Delete n-th item from linkedlist.
@@ -136,9 +180,20 @@ class LinkedList:
 
         Raises: IndexError if n > length
         """
-        # Replace the line below with your code
-        raise NotImplementedError
-       
+        currentNode = self._head
+        for i in range(n-2):
+           currentNode = currentNode.next
+        
+        if n == 1:
+          self._head = self._head.next
+        elif n == self.length():
+          currentNode.next = None
+        else:
+          prev = currentNode
+          next = currentNode.next.next
+          prev.next = next
+      
+
     def contains(self, item) -> bool:
         """Checks whether an item is in the linkedlist and returns
         a boolean value to indicate the status of the search
@@ -151,5 +206,23 @@ class LinkedList:
         Returns: True if item is found in the linkedlist,
         otherwise False
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        currentNode = self._head
+        while currentNode is not None:
+          if currentNode.get() == item:
+              return True
+          
+          currentNode = currentNode.next
+        
+        return False
+
+# linkedlist = LinkedList()
+# linkedlist.append(69)
+# linkedlist.append(100)
+# linkedlist.insert(1, 9)
+# print(linkedlist.get(1))
+# print(linkedlist.get(2))
+# print(linkedlist.get(3))
+# print(linkedlist.contains(67))
+# linkedlist.delete(1)
+
+# 9 69 100

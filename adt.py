@@ -8,7 +8,7 @@ class Empty(Exception):
     Error raised when trying to pop/dequeue items from an empty
     Stack/Queue.
     """
-
+        
 
 class Stack(LinkedList):
     """
@@ -39,7 +39,7 @@ class Stack(LinkedList):
         Returns: None
         """
         # Replace the line below with your code
-        raise NotImplementedError
+        self.append(item)
 
     def pop(self) -> "item":
         """
@@ -54,7 +54,11 @@ class Stack(LinkedList):
         Raises: Empty - if stack is already empty
         """
         # Replace the line below with your code
-        raise NotImplementedError
+        if self.length() == 0:
+            raise Empty()
+        temp = self.get(self.length())
+        self.delete(self.length())
+        return temp
 
 
 # Queue can also inherit from Array
@@ -86,8 +90,7 @@ class Queue(LinkedList):
 
         Returns: None
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        self.append(item)
 
     def dequeue(self) -> "item":
         """
@@ -101,5 +104,13 @@ class Queue(LinkedList):
 
         Raises: Empty - if queue is already empty
         """
-        # Replace the line below with your code
-        raise NotImplementedError
+        temp = self.get(1)
+        self.delete(1)
+        return temp
+
+stack = Stack()
+stack.push(100)
+stack.push(10)
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
